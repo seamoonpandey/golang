@@ -14,3 +14,5 @@ In Go, the := operator is a shortcut for declaring and initializing a variable i
 var message string
 message = fmt.Sprintf("Hi, %v. Welcome!", name)
 ```
+
+**_Note_**: Make sure you have one package main started files or the `go run .` won't do any good
