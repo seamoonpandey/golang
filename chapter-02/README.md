@@ -51,3 +51,17 @@ message = fmt.Sprintf("Hi, %v. Welcome!", name)
 ```
 
 **_Note_**: Make sure you have one package main started files or the `go run .` won't do any good
+
+## Return and handle error
+
+Handling errors is an essential feature of solid code. In this section, you'll add a bit of code to return an error from the greetings module, then handle it in the caller.
+
+- In greetings.go add some error handling since there's no sense sending a greeting back if you don't know who to greet. Return an error to the caller if the name is empty.
+
+- Change the function so that it returns two values: a string and an error. Your caller will check the second value to see if an error occurred. (Any Go function can return multiple values)
+
+- Import the Go standard library errors package so you can use its errors.New function.
+
+- Add an if statement to check for an invalid request (an empty string where the name should be) and return an error if the request is invalid. The errors.New function returns an error with your message inside.
+
+- Add nil (meaning no error) as a second value in the successful return. That way, the caller can see that the function succeeded.
