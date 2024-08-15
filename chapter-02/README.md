@@ -2,7 +2,7 @@
 
 - Actually creating one of em and learning to integrate those things
 
-## Setting up the task
+## Setting up the task (Part 1)
 
 - Create a directory hello/ and greetings/ at the same level
 
@@ -52,7 +52,7 @@ message = fmt.Sprintf("Hi, %v. Welcome!", name)
 
 **_Note_**: Make sure you have one package main started files or the `go run .` won't do any good
 
-## Return and handle error
+## Return and handle error (Part 2)
 
 Handling errors is an essential feature of solid code. In this section, you'll add a bit of code to return an error from the greetings module, then handle it in the caller.
 
@@ -65,3 +65,13 @@ Handling errors is an essential feature of solid code. In this section, you'll a
 - Add an if statement to check for an invalid request (an empty string where the name should be) and return an error if the request is invalid. The errors.New function returns an error with your message inside.
 
 - Add nil (meaning no error) as a second value in the successful return. That way, the caller can see that the function succeeded.
+
+## Learn to use the go slices (Part 3)
+
+In this section I
+
+- Add a randomFormat function that returns a randomly selected format for a greeting message. Note that randomFormat starts with a lowercase letter, making it accessible only to code in its own package (in other words, it's not exported).
+- In randomFormat, declare a formats slice with three message formats. When declaring a slice, you omit its size in the brackets, like this: []string. This tells Go that the size of the array underlying the slice can be dynamically changed.
+- Use the math/rand package to generate a random number for selecting an item from the slice.
+- In Hello, call the randomFormat function to get a format for the message you'll return, then use the format and name value together to create the message.
+- Return the message (or an error) as you did before
